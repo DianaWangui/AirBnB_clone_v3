@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Main file for the API"""
 
-from flask import Flask
+from flask import Flask, jsonify
 from models import storage
 from api.v1.views import app_views
 import os
@@ -17,6 +17,12 @@ port = os.getenv('HBNB_API_PORT', 5000)
 def close_db(exception=None):
     """method that closed db session"""
     storage.close()
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    """method that handles 404 errors"""
+    return jsonify({"error": "Not found"}), 404
 
 
 if __name__ == "__main__":
