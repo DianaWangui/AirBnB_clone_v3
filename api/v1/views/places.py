@@ -2,6 +2,7 @@
 """Places module for the API"""
 from models import storage
 from models.place import Place
+from models.city import City
 from api.v1.views import app_views
 from flask import jsonify, abort, request
 
