@@ -5,6 +5,7 @@ from models.user import User
 from api.v1.views import app_views
 from flask import jsonify, abort, request
 
+
 @app_views.route('/users', methods=['GET'], strict_slashes=False)
 def get_users():
     """Returns all users"""
