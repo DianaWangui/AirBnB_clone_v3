@@ -26,4 +26,4 @@ def page_not_found(error):
 
 
 if __name__ == "__main__":
-    app.run(host=host, port=port, threaded=True)
+    app.run(host=host, port=port, threaded=True, debug=True)
