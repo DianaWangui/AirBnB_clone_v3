@@ -9,9 +9,9 @@ from flask import jsonify, abort, request
 def get_states():
     """Returns all states"""
 
-    states = storage.all(State)
+    states = storage.all(State).values()
     list_states = []
-    for state in states.values():
+    for state in states:
         list_states.append(state.to_dict())
     return jsonify(list_states)
 
