@@ -7,10 +7,10 @@ from api.v1.views import app_views
 from flask_cors import CORS
 import os
 
+
 app = Flask(__name__)
 app.register_blueprint(app_views)
 cors = CORS(app, resources={"/*": {"origins": "0.0.0.0"}})
-
 app.url_map.strict_slashes = False
 
 host = os.getenv('HBNB_API_HOST', '0.0.0.0')
@@ -30,4 +30,4 @@ def page_not_found(error):
 
 
 if __name__ == "__main__":
-    app.run(host=host, port=port, threaded=True, debug=True)
+    app.run(host=host, port=port, threaded=True)
